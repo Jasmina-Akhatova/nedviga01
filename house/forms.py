@@ -3,7 +3,7 @@ from .models import *
 
 
 class BaseForm(forms.ModelForm):
-    type = forms.ChoiceField(choices=Type_choise)
+    type = forms.ChoiceField(choices=Type_choise )
     title = forms.CharField(widget=forms.TextInput)
     bio = forms.TextInput()
     address = forms.CharField(widget=forms.TextInput)
@@ -27,19 +27,17 @@ class ApartamentForm(forms.ModelForm):
     floor = forms.IntegerField(widget=forms.NumberInput)
     storeys = forms.IntegerField(widget=forms.NumberInput)
     building_type = forms.ChoiceField(choices=Building_type)
-    image = forms.ImageField()
 
     class Meta:
         model = House
-        fields = ['floor', 'storeys', 'building_type', 'image']
+        fields = ['floor', 'storeys', 'building_type', ]
 
 
 class HouseForm(forms.ModelForm):
     living_space = forms.IntegerField(widget=forms.NumberInput)
     location = forms.ChoiceField(choices=Location)
     convenience = forms.TextInput()
-    image = forms.ImageField()
 
     class Meta:
         model = House
-        fields = ['living_space', 'location', 'convenience','image']
+        fields = ['living_space', 'location', 'convenience',]

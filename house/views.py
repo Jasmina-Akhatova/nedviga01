@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from .models import *
 from .forms import *
 
+def home(request):
+    return render(request,'home.html')
 
 def home(request):
     form = BaseForm(request.POST)

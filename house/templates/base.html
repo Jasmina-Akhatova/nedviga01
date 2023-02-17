@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'style.css'%}">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="nav-item">Home</a>
+        <a href="{% url 'nedviga:creat'%}nav-item">Creat </a>
+        <a href="nav-item">Sign in</a>
+        <a href="nav-item">About</a>
+    </nav>
+</body>
+<div>
+    {% block content %}
+    {% endblock %}
+</div>
+</html>
